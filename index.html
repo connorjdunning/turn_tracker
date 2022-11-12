@@ -16,6 +16,13 @@
     <label for="turnInput">Override Current Turn:</label>
     <input id="turnInput" type="number" value="0"  onchange="updateTurn(this.value)"> <br><br>
 
+    <label for="countDownBox">Countdown:</label>
+    <input id="countDownBox" type="checkbox" unchecked  onchange="toggleCountdown()"> <br>
+
+    <label for="countDownLabel">label:</label>
+    <input id="countDownLabel" type="text" value="Countdown: "  onchange="labelCountdown(this.value)">
+    <br><br>
+
     <label for="mustRest">Party Must Rest Every:</label>
     <input id="mustRest" type="number" value="6"  onchange="updateRest(this.value)"> Turns. <br><br>
 
@@ -26,15 +33,19 @@
     <input id="monsterInput" type="number" value="2"  onchange="updateMonsterChk(this.value)"> Turns. <br>
 
     <label for="monsterChance">Chance is:</label>
-    <input id="monsterChance" type="number" value="1"> in 6. <br><br>
+    <input id="monsterChance" type="number" value="1"> in 6. <br>
+
+    <label for="reactionMod">Modifier to Reaction Rolls:</label>
+    <input id="reactionMod" type="number" value="0"> <br><br>
 
     <h1>Notes:</h1>
     <div id="notes" class="staticShadow" contentEditable="true">CTRL+B to <strong>bold</strong>, CTRL+I to <i>italicize</i> </div> <br>
 
     <div id="topBar" class="staticShadow">
         <ul>
+            <li id="countHider"><span id="countText">Countdown: </span> <input id="countDown" type="number" value="0"></li>
             <li>Turn: <span id="turnText">0</span></li>
-            <a onclick="updateTurn(0, true)" href="#"><li>NEXT TURN>></li></a>
+            <a onclick="event.preventDefault();updateTurn(0, true)" href="#" class="service"><li>NEXT TURN>></li></a>
         </ul>
     </div>
     <h1>Log:</h1>
