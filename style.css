@@ -9,7 +9,7 @@
     /* Safari */
     position: fixed;
     top: 2%;
-    right: 5%;
+    right: 2%;
     /* width: 100%; */
 }
 
@@ -48,15 +48,20 @@ input[type=number] {
     border-radius: 5px;
 }
 
-#notes {
-    height: 800px;
+#notes, #log {
+    height: 600px;
     width: 95%;
     padding: 1em;
-
+    overflow-y:auto;
     border: #111;
     border-radius: 5px;
 }
 
 .staticShadow {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#log {
+    height: 100px;
+    overflow-y:auto
 }

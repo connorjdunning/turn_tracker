@@ -6,8 +6,8 @@ let wanderingMonster = document.getElementById("monsterInput").value
 let rest = document.getElementById("mustRest").value
 
 
-function myFunc(val) {
-    alert(val)
+function log(text) {
+    document.getElementById("log").innerHTML += `@Turn:${turn} ${text} <br>`
 }
 
 function updateTurn(val, justNext) {
@@ -42,6 +42,7 @@ function everyTurn() {
     // Check light
     if (turn % lightSource == 0) {
         alert("Check Light Source")
+        log("Light Source Checked")
     }
     // Check Wandering Monsters
     if (turn % wanderingMonster == 0) {
@@ -49,10 +50,12 @@ function everyTurn() {
         chance = document.getElementById("monsterChance").value
         if (oneDsix <= chance) {
             alert("1d6 roll was a " + oneDsix + "\nWANDERING MONSTER APPEARS")
+            log("1d6 roll was a " + oneDsix + "\nWANDERING MONSTER APPEARS")
         }
     // Check if party needs to rest
     if (turn % rest == 0) {
         alert("The party must rest for 1 turn")
+        log("The party must rest for 1 turn ")
     }
 
 
