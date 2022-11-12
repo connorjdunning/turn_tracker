@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Time Tracker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <h1>Options:</h1>
+
+    <label for="turnInput">Override Current Turn:</label>
+    <input id="turnInput" type="number" value="0"  onchange="updateTurn(this.value)"> <br><br>
+
+    <label for="mustRest">Party Must Rest Every:</label>
+    <input id="mustRest" type="number" value="6"  onchange="updateRest(this.value)"> Turns. <br><br>
+
+    <label for="lightInput">Check Lightsource Every:</label>
+    <input id="lightInput" type="number" value="4"  onchange="updateLightChk(this.value)"> Turns. <br><br>
+
+    <label for="monsterInput">Wandering Monsters Every:</label>
+    <input id="monsterInput" type="number" value="2"  onchange="updateMonsterChk(this.value)"> Turns. <br>
+
+    <label for="monsterChance">Chance is:</label>
+    <input id="monsterChance" type="number" value="1"> in 6. <br><br>
+
+    <h1>Notes:</h1>
+    <div id="notes" class="staticShadow" contentEditable="true">CTRL+B to <strong>bold</strong>, CTRL+I to <i>italicize</i> </div> <br>
+
+    <div id="topBar" class="staticShadow">
+        <ul>
+            <li>Turn: <span id="turnText">0</span></li>
+            <a onclick="updateTurn(0, true)" href="#"><li>NEXT TURN>></li></a>
+        </ul>
+    </div>
+    <div id="content"></div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- <input type="text" name="textie" value="TypeHere" onchange="myFunc(this.value)"> -->
+</body>
+<script src="script.js"></script>
