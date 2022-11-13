@@ -3,6 +3,7 @@ let turn = 0
 let lightSource = document.getElementById("lightInput").value
 let wanderingMonster = document.getElementById("monsterInput").value
 let rest = document.getElementById("mustRest").value
+
 var msg
 var msgReact
 
@@ -45,11 +46,11 @@ function updateRest(val) {
 
 function toggleCountdown() {
     if (document.getElementById("countDownBox").checked) {
-        document.getElementById("countHider").style.visibility="visible";
-        document.getElementById("countHider").style.position="relative";
+        document.getElementById("countHider").style.visibility = "visible";
+        document.getElementById("countHider").style.position = "relative";
     } else {
-        document.getElementById("countHider").style.visibility="hidden";
-        document.getElementById("countHider").style.position="fixed";
+        document.getElementById("countHider").style.visibility = "hidden";
+        document.getElementById("countHider").style.position = "fixed";
     }
 }
 
@@ -68,7 +69,7 @@ function everyTurn() {
 
         if (oneDsix <= chance) {
             msg =
-            `1d6 roll was a ${oneDsix} 
+                `1d6 roll was a ${oneDsix} 
             WANDERING MONSTER APPEARS
             `
 
@@ -94,11 +95,19 @@ function everyTurn() {
         alert(msg)
         log(msg)
     }
-    // Decrement countdown
+    // Countdown
+    // Decrement
     if (document.getElementById("countDownBox").checked) {
         count = parseInt(document.getElementById("countDown").value)
         count--
-        document.getElementById("countDown").value = count    
+        document.getElementById("countDown").value = count
     }
-    
+    // Check if countdown ends
+    console.log(count)
+    if (count === 0) {
+        countDownMsg = document.getElementById("countDownLabel").value
+        msg = `${countDownMsg} has reached 0`
+        alert(msg)
+        log(msg)
+    }
 }
